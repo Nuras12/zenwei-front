@@ -6,6 +6,7 @@
       </RouterLink>
       <nav class="flex items-center gap-10 ml-20">
         <RouterLink to="/registration" class="nav-link">Регистрация</RouterLink>
+        <RouterLink to="/grants" class="nav-link">Стипендии</RouterLink>
       </nav>
       <UserPlaceholder class="ml-auto"></UserPlaceholder>
     </div>

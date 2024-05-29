@@ -10,12 +10,29 @@
     </section>
 
     <section class="benefits">
-      <div class="container mx-auto px-3"></div>
+      <div class="container mx-auto px-3 flex flex-col gap-9">
+        <BenefitCard title="Широкий выбор грантов">
+          Мы предоставляем доступ к полному списку грантов от всех китайских университетов. Наша
+          база данных постоянно обновляется, чтобы вы всегда имели доступ к самой свежей информации.
+        </BenefitCard>
+
+        <BenefitCard title="Удобство и простота" class="flex-row-reverse">
+          Наш интуитивно понятный интерфейс делает поиск и выбор грантов быстрым и легким процессом.
+          С нашими инструментами вы сможете эффективно находить подходящие гранты для каждого вашего
+          клиента.
+        </BenefitCard>
+
+        <BenefitCard title="Эксклюзивные возможности">
+          Получите доступ к уникальным грантам и специальным предложениям, которые могут увеличить
+          вашу конкурентоспособность на рынке.
+        </BenefitCard>
+      </div>
     </section>
   </main>
 </template>
 
 <script setup lang="ts">
+import BenefitCard from '@/components/HomeView/BenefitCard.vue'
 import BaseButton from '@/components/Base/BaseButton.vue'
 </script>
 

@@ -4,6 +4,7 @@
       <section class="logo-section">
         <LogoIcon></LogoIcon>
       </section>
+
       <section class="links-section flex items-start justify-between">
         <nav class="footer-nav">
           <div class="font-medium text-xl mb-3">{{ $t('footer.grants_section.header') }}</div>
@@ -14,7 +15,9 @@
           </div>
         </nav>
       </section>
+
       <div class="line"></div>
+
       <section class="social-section flex items-center">
         <div class="links flex items-center">
           <div class="font-medium text-lg">{{ $t('footer.follow') }}</div>
