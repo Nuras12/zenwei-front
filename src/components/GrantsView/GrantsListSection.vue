@@ -3,15 +3,71 @@
     <div class="container mx-auto px-3">
       <div class="title">Стипендии</div>
       <div class="content flex flex-col gap-3">
-        <GrantCard></GrantCard>
-        <GrantCard></GrantCard>
+        <GrantCard v-for="(item, index) in grants" :key="index" v-bind="item"></GrantCard>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import GrantCard from '@/components/GrantsView/GrantCard.vue'
+import GrantIcon from '@/assets/images/grant-icon.png'
+
+import GrantCard, { type GrantCardProps } from '@/components/GrantsView/GrantCard.vue'
+import type { Course } from '../Common/CoursesTable.vue'
+
+const courses: Course[] = [
+  {
+    program: 'Mechanical Engineering',
+    lang: 'English',
+    starting: 'Sep, 2024',
+
+    coverage: {
+      tuition: '42000',
+      accommodation: 'NO',
+      living: 'YES'
+    },
+
+    price: {
+      tuition: '42000',
+      accommodation: '300-2600',
+      living: '0-2000'
+    }
+  },
+  {
+    program: 'Mechanical Engineering',
+    lang: 'English',
+    starting: 'Sep, 2024',
+
+    coverage: {
+      tuition: '42000',
+      accommodation: 'NO',
+      living: 'YES'
+    },
+
+    price: {
+      tuition: '42000',
+      accommodation: '300-2600',
+      living: '0-2000'
+    }
+  }
+]
+
+const grants: GrantCardProps[] = [
+  {
+    title: 'Hanbin Institute of Technology, Shenzhen',
+    location: 'Shenzen',
+    href: '/',
+    image: GrantIcon,
+    options: courses
+  },
+  {
+    title: 'Hanbin Institute of Technology, Shenzhen',
+    location: 'Shenzen',
+    href: '/',
+    image: GrantIcon,
+    options: courses
+  }
+]
 </script>
 
 <style scoped lang="scss">

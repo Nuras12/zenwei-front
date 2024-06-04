@@ -1,20 +1,20 @@
 <template>
   <div class="grant-card" :class="{ expanded }">
     <div class="header flex items-center gap-5">
-      <img :src="GrantIcon" class="logo-image" />
+      <img :src="image" class="logo-image" />
 
       <div>
-        <div class="title mb-2">Hanbin Institute of Technology, Shenzhen</div>
+        <div class="title mb-2">{{ title }}</div>
         <div class="flex items-center gap-1">
           <div class="location-icon">
             <LocationIcon></LocationIcon>
           </div>
-          <div class="subtitle">Shenzen</div>
+          <div class="subtitle">{{ location }}</div>
         </div>
       </div>
 
       <div class="ml-auto flex items-center gap-10">
-        <RouterLink to="/" class="link"> Learn more </RouterLink>
+        <RouterLink :to="href" class="link"> Learn more </RouterLink>
         <button class="arrow-icon" @click="expanded = !expanded">
           <ArrowDownIcon></ArrowDownIcon>
         </button>
@@ -22,56 +22,29 @@
     </div>
 
     <div class="collapse">
-      <CoursesTable v-if="expanded" :options="courses"></CoursesTable>
+      <CoursesTable v-if="expanded" :options="options"></CoursesTable>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import GrantIcon from '@/assets/images/grant-icon.png'
 import LocationIcon from '@/assets/icons/location.svg?component'
 import ArrowDownIcon from '@/assets/icons/arrow-down.svg?component'
 import CoursesTable, { type Course } from '@/components/Common/CoursesTable.vue'
+
 import { ref } from 'vue'
 
+export interface GrantCardProps {
+  title: string
+  location: string
+  href: string
+  image: string
+  options: Course[]
+}
+
+defineProps<GrantCardProps>()
+
 const expanded = ref(false)
-
-const courses: Course[] = [
-  {
-    program: 'Mechanical Engineering',
-    lang: 'English',
-    starting: 'Sep, 2024',
-
-    coverage: {
-      tuition: '42000',
-      accommodation: 'NO',
-      living: 'YES'
-    },
-
-    price: {
-      tuition: '42000',
-      accommodation: '300-2600',
-      living: '0-2000'
-    }
-  },
-  {
-    program: 'Mechanical Engineering',
-    lang: 'English',
-    starting: 'Sep, 2024',
-
-    coverage: {
-      tuition: '42000',
-      accommodation: 'NO',
-      living: 'YES'
-    },
-
-    price: {
-      tuition: '42000',
-      accommodation: '300-2600',
-      living: '0-2000'
-    }
-  }
-]
 </script>
 
 <style scoped lang="scss">
