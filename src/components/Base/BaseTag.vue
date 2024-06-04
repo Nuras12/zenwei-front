@@ -36,6 +36,8 @@ const model = defineModel<T | null>('modelValue', { required: true })
     font-size: 16px;
     line-height: 28px;
 
+    white-space: pre;
+
     &.active {
       font-weight: 600;
 

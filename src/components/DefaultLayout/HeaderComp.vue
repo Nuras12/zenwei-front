@@ -32,6 +32,8 @@ defineProps<{
 
   transition: 0.25s;
 
+  z-index: 2;
+
   &.variant-dark {
     background: $text-black;
     box-shadow: none;
