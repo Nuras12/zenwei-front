@@ -1,6 +1,6 @@
 <template>
   <div class="grants-list-section">
-    <div class="container mx-auto px-3">
+    <div class="container mx-auto c-padding">
       <div class="title">Стипендии</div>
       <div class="content flex flex-col gap-3">
         <GrantCard v-for="(item, index) in grants" :key="index" v-bind="item"></GrantCard>
